@@ -1,0 +1,26 @@
+.flexeo{
+    display: flex;
+    justify-content: space-between;
+    background-color: blanchedalmond;
+    align-items: center;
+    padding:20px 10%;
+}
+.flexeo a{
+    color:black;
+}
+.flexeo nav .navlinks{
+    list-style: none;
+}
+.navlinks li{
+    display: inline-block;
+}
+.flexeo ul li a{
+    color: black;
+}
+.letra{
+    font-size: 1.5rem;
+    padding:0px 1rem;
+}
+.encerrador{
+    text-align: center;
+}
