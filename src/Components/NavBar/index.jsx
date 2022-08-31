@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import CartWidget from "../CartWidget";
 
 const NavBar = () => {
   return (
@@ -32,6 +33,7 @@ const NavBar = () => {
             </li>
           </ul>
         </nav>
+        <CartWidget/>
       </div>
       <div class="encerrador">
         <h1>Animania</h1>
