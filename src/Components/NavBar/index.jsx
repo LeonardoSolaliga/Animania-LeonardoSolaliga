@@ -5,29 +5,29 @@ import CartWidget from "../CartWidget";
 const NavBar = () => {
   return (
     <div className="navbar">
-      <div class="flexeo">
-        <a class="letra" href=" ">
+      <div className="flexeo">
+        <a className="letra" href=" ">
           LogoAnimania
         </a>
         <nav>
-          <ul class="navlinks">
+          <ul className="navlinks">
             <li>
-              <a class="letra" href=" ">
+              <a className="letra" href=" ">
                 Inicio
               </a>
             </li>
             <li>
-              <a class="letra" href=" ">
+              <a className="letra" href=" ">
                 Manga
               </a>
             </li>
             <li>
-              <a class="letra" href=" ">
+              <a className="letra" href=" ">
                 Juegos
               </a>
             </li>
             <li>
-              <a class="letra" href=" ">
+              <a className="letra" href=" ">
                 Figuras
               </a>
             </li>
@@ -35,7 +35,7 @@ const NavBar = () => {
         </nav>
         <CartWidget/>
       </div>
-      <div class="encerrador">
+      <div className="encerrador">
         <h1>Animania</h1>
       </div>
     </div>
