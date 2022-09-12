@@ -1,0 +1,15 @@
+.boton{
+    padding: 10px;
+}
+.flexCount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.alineado{
+    display: flex;
+}
+
+
+

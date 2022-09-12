@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './styles.css';
 
 const ItemCount=({stock, initial, onAdd})=> {
     const [count, setCount]= useState(initial);
@@ -29,12 +30,16 @@ const ItemCount=({stock, initial, onAdd})=> {
 
   return (
     <div>
-        <div>
-        <button onClick={handleDecrement}> - </button>
-        <p>{count}</p>
-        <button onClick={handleAdd}> + </button>
+        <div className="flexCount">
+            <div className="alineado">
+            <button className="boton" onClick={handleDecrement}> - </button>
+            <p>{count}</p>
+            <button className="boton" onClick={handleAdd}> + </button>
+            </div>
+            <div>
+            <button className="boton" onClick={onCarrito}> Agregar al carrito</button>
+            </div>
         </div>
-        <button onClick={onCarrito}> Agregar al carrito</button>
 
     </div>
   )

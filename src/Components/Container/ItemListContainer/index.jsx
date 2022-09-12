@@ -3,7 +3,7 @@ import "./styles.css";
 //import "../../ItemCount";
 //import ItemCount from '../../ItemCount';
 import ItemList from '../../ItemList';
-import { products } from '../../../data/products';
+//import { products } from '../../../data/products';
 import { useEffect } from 'react';
 
 const ItemListContainer = ({ greeting }) => {
@@ -15,14 +15,16 @@ const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);
   useEffect(() => {
     (async () => {
-      const obtProductos = new Promise((accept, reject) => {
+      /*const obtProductos = new Promise((accept, reject) => {
         setTimeout(() => {
           accept(products)
         }, 2000);
-      })
+      })*/
       try {
-        const productos = await obtProductos;
+        const response = await fetch("https://fakestoreapi.com/products");
+        const productos= await response.json();
         setProductos(productos);
+        console.log(productos);
       } catch (error) {
         console.log(error);
       }
