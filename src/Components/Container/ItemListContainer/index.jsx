@@ -5,31 +5,31 @@ import "./styles.css";
 import ItemList from '../../ItemList';
 //import { products } from '../../../data/products';
 import { useEffect } from 'react';
+import {useParams} from 'react-router-dom';
 
 const ItemListContainer = ({ greeting }) => {
-
-  /*const agregarAlCarrito=(cantidad)=>{
-    console.log(`se agrego al carrito ${cantidad}`);
-
-  }<ItemCount initial={1} stock={5} onAdd={agregarAlCarrito}/>*/
   const [productos, setProductos] = useState([]);
+  const {categoryId}=useParams();
   useEffect(() => {
     (async () => {
-      /*const obtProductos = new Promise((accept, reject) => {
-        setTimeout(() => {
-          accept(products)
-        }, 2000);
-      })*/
       try {
-        const response = await fetch("https://fakestoreapi.com/products");
-        const productos= await response.json();
-        setProductos(productos);
-        console.log(productos);
+        if (categoryId){
+          const response = await fetch(`https://fakestoreapi.com/products/category/${categoryId}`);
+          const productos= await response.json();
+          setProductos(productos);
+  
+        }
+        else{
+          const response = await fetch("https://fakestoreapi.com/products");
+          const productos= await response.json();
+          setProductos(productos);
+        }
+
       } catch (error) {
         console.log(error);
       }
     })()
-  }, [])
+  }, [categoryId]);
 
 
   return (

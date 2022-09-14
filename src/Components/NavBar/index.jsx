@@ -1,35 +1,41 @@
 import React from "react";
 import "./styles.css";
 import CartWidget from "../CartWidget";
+import {Link} from 'react-router-dom';
 
 const NavBar = () => {
   return (
     <div className="navbar">
       <div className="flexeo">
-        <a className="letra" href=" ">
+        <Link to="/" className="letra">
           LogoAnimania
-        </a>
+        </Link>
         <nav>
           <ul className="navlinks">
             <li>
-              <a className="letra" href=" ">
+              <Link to="/" className="letra">
                 Inicio
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="letra" href=" ">
-                Manga
-              </a>
+              <Link to="/category/men's clothing" className="letra" >
+                Men's clothing
+              </Link>
             </li>
             <li>
-              <a className="letra" href=" ">
-                Juegos
-              </a>
+              <Link to="/category/women's clothing" className="letra">
+                Women's clothing
+              </Link>
             </li>
             <li>
-              <a className="letra" href=" ">
-                Figuras
-              </a>
+              <Link to="/category/electronics" className="letra">
+                Electronics
+              </Link>
+            </li>
+            <li>
+              <Link to="/category/jewelery" className="letra">
+                jewelery
+              </Link>
             </li>
           </ul>
         </nav>
