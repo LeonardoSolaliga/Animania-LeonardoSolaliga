@@ -1,15 +1,23 @@
-import React,{useState} from 'react'
+import React,{useContext, useState} from 'react'
 import ItemCount from '../ItemCount';
 import "./styles.css"
 import { useNavigate } from 'react-router-dom';
+import { Shop } from '../context';
 const ItemDetail = ({product}) => {
   const [quantity,setQuantity]=useState(0);
   const navigate=useNavigate();
+
+  //utilizo el context
+  const {addItem}=useContext(Shop);
+
   const addCart=(quantity)=>{
     setQuantity(quantity);
   }
   console.log(quantity);
   const handleCompra=()=>{
+    const productGuardado={...product,quantity:quantity};
+
+    addItem(productGuardado);
     navigate('/cart');
   }
   return (
