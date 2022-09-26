@@ -49,7 +49,7 @@ const ShopProvider = ({children}) => {
     }
 
   return (
-    <Shop.Provider value={{cart,addItem}}>
+    <Shop.Provider value={{cart,addItem,removeItem,clearCart}}>
         {children}
     </Shop.Provider>
   )

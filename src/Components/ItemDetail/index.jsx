@@ -26,7 +26,7 @@ const ItemDetail = ({product}) => {
         <img src={product.image} alt="producto"/>
         <h4>Precio :{product.price}</h4>
         <p>{product.description}</p>
-        {!quantity ? <ItemCount initial={1} stock={5} onAdd={addCart}/> : <button onClick={handleCompra}> agregar al carrito </button>/*pregunto si es true o false, si es true devuelve lo que va luego del "?" sino lo que viene despues de "":"*/}
+        {!quantity ? <ItemCount initial={1} stock={5} onAdd={addCart}/> : <button onClick={handleCompra}> terminar compra </button>/*pregunto si es true o false, si es true devuelve lo que va luego del "?" sino lo que viene despues de "":"*/}
         {/*<ItemCount initial={1} stock={product?.rating?.count}/>*/}
     </div>
   )
