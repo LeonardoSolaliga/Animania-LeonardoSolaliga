@@ -7,7 +7,7 @@ import { Shop } from '../context';
 const CartWidget=()=> {
   const {cart} = useContext(Shop);
   const navigate=useNavigate();
-  const [numero,setNumero]=useState(0);
+  const [numero, setNumero]=useState(0);
   var num=0;
   const aux=cart;
   aux.forEach(element => {

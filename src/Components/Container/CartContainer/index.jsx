@@ -59,10 +59,10 @@ const Cart = () => {
     })
   })
 
+  
   const navigateItemContainer=()=>{
     navigate('/');
   }
-  console.log(cart);
   return (
     <div style={{ height: 400, width: '100%' }}>
       {!cart.length ?  <button onClick={navigateItemContainer}>Carrito vacio, Vuelva al inicio</button> : <DataGrid
