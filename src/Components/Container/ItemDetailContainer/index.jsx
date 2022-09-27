@@ -17,8 +17,11 @@ const ItemDetailContainer = () => {
         const getProductos=async()=>{
             
             try{
+                
 
+                
                 const docRef = doc(db, "products", productId);
+
                 const docSnap = await getDoc(docRef);
 
                 if (docSnap.exists()) {
