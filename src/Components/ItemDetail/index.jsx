@@ -30,7 +30,7 @@ const ItemDetail = ({product}) => {
     if (stock===0){
       return <button onClick={stockVacioInicio}>stock vacio</button>
     }
-    return (!quantity ? <ItemCount initial={1} stock={5} onAdd={addCart}/> : <button onClick={handleCompra}> terminar compra </button>)
+    return (!quantity ? <ItemCount initial={1} stock={product?.stock} onAdd={addCart}/> : <button onClick={handleCompra}> terminar compra </button>)
 
   }
   return (
@@ -40,7 +40,6 @@ const ItemDetail = ({product}) => {
         <h4>Precio :{product.price}</h4>
         <p>{product.description}</p>
         <NoStock/>
-        {/*<ItemCount initial={1} stock={product?.rating?.count}/>*/}
     </div>
   )
 }

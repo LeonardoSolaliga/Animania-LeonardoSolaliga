@@ -49,9 +49,14 @@ const ShopProvider = ({children}) => {
         return setCart([]);
         
     }
+    const total=()=>{
+        const total=cart.reduce((a,b)=>a+=(b.quantity*b.price),0);
+        return total;
+
+    }
 
   return (
-    <Shop.Provider value={{cart,addItem,removeItem,clearCart}}>
+    <Shop.Provider value={{cart,addItem,removeItem,clearCart,total}}>
         {children}
     </Shop.Provider>
   )

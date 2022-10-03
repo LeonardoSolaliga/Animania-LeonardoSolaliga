@@ -2,6 +2,7 @@ import React,{useContext} from 'react';
 import {AiOutlineShoppingCart} from'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 import { Shop } from '../context';
+import "./styles.css";
 
 
 const CartWidget=()=> {
@@ -16,9 +17,13 @@ const CartWidget=()=> {
   }
   
   return (
-    <div onClick={handleNavigate}><AiOutlineShoppingCart/>
+    <>
+    {!cart.length ? <div id='invisible' onClick={handleNavigate}><AiOutlineShoppingCart/>
       <span>{cart.length && cantidadTotal}</span>
-    </div>
+    </div>:<div id='visible' onClick={handleNavigate}><AiOutlineShoppingCart/>
+      <span>{cart.length && cantidadTotal}</span>
+    </div>}
+    </>
   )
 }
 

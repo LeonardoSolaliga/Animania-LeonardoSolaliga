@@ -1,18 +1,39 @@
 import React,{useContext} from 'react'
+import { useNavigate } from 'react-router-dom';
+import './styles.css';
 import { Shop } from '../../context';
 import { DataGrid } from '@mui/x-data-grid';
 import { Button } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
-import './styles.css';
+
+
+import ordenGenerada from '../../../services/generarOrden';
+import { collection, addDoc, getDoc } from "firebase/firestore";
+import { db } from '../../../firebase/config';
+import { doc, updateDoc } from "firebase/firestore";
 
 
 const Cart = () => {
-  const {cart, removeItem, clearCart} = useContext(Shop);
+  const {cart, removeItem, clearCart,total} = useContext(Shop);
   const navigate=useNavigate();
   const renderImage = (image) => {
     return(
       <img src={image.value} alt="cart-product" style={{height: '120px'}}></img>
     )
+  }
+  const botonComprar=async()=>{
+
+    const importeTotal=total();
+    const orden=ordenGenerada("agustin","agus.coder@hotmail.com",54599624,cart,importeTotal);
+    const docRef = await addDoc(collection(db, "orders"), orden);
+    cart.forEach(async(productoCart)=>{
+      const productRef = doc(db, "products", productoCart.id);
+      const productSnap=await getDoc(productRef);
+      await updateDoc(productRef, {
+        stock: productSnap.data().stock-productoCart.quantity
+      });
+      
+    })
+    alert(`Gracias por la compra, se genero la orden :  ${docRef.id}`);
   }
 
   const renderRemoveButton = (item) => {
@@ -70,11 +91,12 @@ const Cart = () => {
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
-        rowHeight={'150px'}
+        rowHeight={150}
         
       />
       }
       {!cart.length ? <button onClick={clearCart} id="invisible" color="error" variant="outlined">Borrar carrito</button>: <button onClick={clearCart} id="visible" color="error" variant="outlined">Borrar carrito</button>}
+      {!cart.length ? <button onClick={botonComprar} id="invisible">Confirmar compra</button>:<button onClick={botonComprar} id="visible">Confirmar compra</button>}
     </div>
   );
 }
