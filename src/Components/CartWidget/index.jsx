@@ -17,7 +17,7 @@ const CartWidget=()=> {
   
   return (
     <div onClick={handleNavigate}><AiOutlineShoppingCart/>
-      {cart.length && cantidadTotal}
+      <span>{cart.length && cantidadTotal}</span>
     </div>
   )
 }
