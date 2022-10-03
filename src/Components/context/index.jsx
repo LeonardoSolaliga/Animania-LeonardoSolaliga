@@ -35,9 +35,11 @@ const ShopProvider = ({children}) => {
     const removeItem=(item)=>{
         const productExistente=isInCart(item.id);
         if(productExistente){
-            const itemDelet=cart.find(product=>product.id===item.id);
-            const itemIndex=cart.indexOf(itemDelet);
-            cart.splice(itemIndex,1);
+            const arrayAux=cart
+            const itemDelet=arrayAux.find(product=>product.id===item.id);
+            const itemIndex=arrayAux.indexOf(itemDelet);
+            arrayAux.splice(itemIndex,1);
+            setCart(arrayAux);
             console.log("item eliminado")
         } else{
             console.log("item no encontrado");
