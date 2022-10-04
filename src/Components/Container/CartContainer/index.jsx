@@ -33,6 +33,7 @@ const Cart = () => {
       });
       
     })
+    clearCart();
     alert(`Gracias por la compra, se genero la orden :  ${docRef.id}`);
   }
 
