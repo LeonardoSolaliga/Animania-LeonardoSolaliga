@@ -95,6 +95,7 @@ const Cart = () => {
         
       />
       }
+      {!cart.length ? <span id="invisible"></span>:<span id="visible" className='centrarSpan'>Total: {total()}</span>}
       {!cart.length ? <button onClick={clearCart} id="invisible" color="error" variant="outlined">Borrar carrito</button>: <button onClick={clearCart} id="visible" color="error" variant="outlined">Borrar carrito</button>}
       {!cart.length ? <button onClick={botonComprar} id="invisible">Confirmar compra</button>:<button onClick={botonComprar} id="visible">Confirmar compra</button>}
     </div>
