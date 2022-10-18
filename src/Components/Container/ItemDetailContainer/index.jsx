@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import ItemDetail from '../../ItemDetail';
-import {useParams} from 'react-router-dom';
+import { useNavigate, useParams} from 'react-router-dom';
 import { doc, getDoc } from "firebase/firestore";
 import { db } from '../../../firebase/config';
 
@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
 
     const[productDetail, setproductDetail]=useState({})
     const {productId}=useParams()
-    console.log(productId);
+    const navigate = useNavigate();
 
     
     useEffect(()=>{
@@ -25,22 +25,19 @@ const ItemDetailContainer = () => {
                 const docSnap = await getDoc(docRef);
 
                 if (docSnap.exists()) {
-                    console.log("Document data:", docSnap.data());
                     setproductDetail({id:docSnap.id, ...docSnap.data()});
                 } else {
-                // doc.data() will be undefined in this case
-                console.log("No such document!");
+                    navigate('/');
                 }
                 
             } catch(error){
-                console.log(error);
+                console.log("error");
             }
             
         }
         getProductos();
 
-    },[productId])
-  console.log(productDetail);
+    },[productId,navigate])
   
     return (
     <ItemDetail product={productDetail}/>

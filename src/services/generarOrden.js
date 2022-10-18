@@ -5,9 +5,9 @@ const ordenGenerada=(nombre,email,numero,cart,total)=>{
             nombre:nombre,
             email:email
         },
+        numero:numero,
         items:cart
-        ,
-        numero:numero
+        
         ,
         total:total
         ,

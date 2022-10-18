@@ -1,7 +1,7 @@
 .flexeo{
     display: flex;
     justify-content: space-between;
-    background-color: blanchedalmond;
+    background-color:rgba(155, 91, 39, 0.582);
     align-items: center;
     padding:20px 10%;
 }

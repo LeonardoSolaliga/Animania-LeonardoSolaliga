@@ -1,5 +1,28 @@
+.flex{
+    display:flex;
+    flex-direction: row;
+}
 .separador{
-    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:white;
+    padding: 15px;
+    width: 430px;
+    height: 500px;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.20);
+    cursor: pointer;
+}
+.separador:hover{
+    box-shadow: 10px 8px 10px 5px rgba(0,0,0,0.75);
+    transition: 1s;
+}
+.title{
+    font-size: 20px;
+}
+
+.image{
+    max-height: 350px;
 }
 div img{
 
@@ -7,11 +30,15 @@ div img{
     height: auto;
 }
 div h4{
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 div h5{
-    font-size: 1.9rem;
+    font-size: 1.7rem;
 }
 div h6{
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+}
+p{
+    font-size: 20px;
+
 }

@@ -7,3 +7,92 @@
 .centrarSpan{
     text-align: center;
 }
+#formulario{
+    position: fixed;
+    display: none;
+    z-index: 3;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.7);
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+#myform{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.error{
+    font-weight: "bold";
+    color: red;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"]
+{
+  border: thin solid #dedede;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  outline: none;
+  display: block;
+  width: 100vh;
+  font-size: 1rem;
+  line-height: 1;
+  background-color: transparent;
+}
+input[type="submit"]{
+  display: inline-block;
+  width: 100px;
+  border: thin solid #444;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem 0 0;
+  background-color: #eee;
+  color: #444;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1;
+  font-family: 'Muli',sans-serif;
+  text-transform: none;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  
+  cursor: pointer;
+}
+#botonCancel{
+    display: inline-block;
+    width: 100px;
+    border: thin solid #444;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem 0 0;
+    background-color: #eee;
+    color: #444;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1;
+    text-transform: none;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    
+    cursor: pointer;
+}
+
+.text{
+    font-size: 2rem;
+    line-height: 1;
+}
+.formularios{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    padding: 40px;
+    background-color: antiquewhite;
+    font-family: 'Muli',sans-serif;
+}

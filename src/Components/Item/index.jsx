@@ -8,12 +8,11 @@ const Item = ({product}) => {
     navigate(`/item/${product.id}`)
   }
   return (
-    <div className='separador' onClick={handleNavigate}>
-        <h4>{product.title}</h4>
-        <img src={product.image} alt="descripcion de imagen"/>
-        <p>{product.description}</p>
-
-    </div>
+      <div className='separador' onClick={handleNavigate}>
+        <h3 className='title'>{product.title}</h3>
+        <img className='image' src={product.image} alt="descripcion de imagen"/>
+        <h5>Precio: ${product.price}</h5>
+      </div>
   )
 }
 

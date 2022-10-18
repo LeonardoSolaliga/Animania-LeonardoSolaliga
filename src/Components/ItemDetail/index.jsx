@@ -8,13 +8,11 @@ const ItemDetail = ({product}) => {
   const [quantity,setQuantity]=useState(0);
   const navigate=useNavigate();
 
-  //utilizo el context
   const {addItem}=useContext(Shop);
 
   const addCart=(quantity)=>{
     setQuantity(quantity);
   }
-  console.log(quantity);
   const handleCompra=()=>{
     const productGuardado={...product,quantity:quantity};
 
@@ -34,12 +32,14 @@ const ItemDetail = ({product}) => {
 
   }
   return (
-    <div>
-        <h1>{product.title}</h1>
+    <div className='cuadro'>
+      <div className='cuadroItem'>
+        <h2>{product.title}</h2>
         <img src={product.image} alt="producto"/>
         <h4>Precio :{product.price}</h4>
         <p>{product.description}</p>
         <NoStock/>
+        </div>
     </div>
   )
 }

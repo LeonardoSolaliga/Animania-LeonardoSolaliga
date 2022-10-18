@@ -31,17 +31,7 @@ const ShopProvider = ({children}) => {
         return cart.some(product=>product.id===id);
     }
     const removeItem=(item)=>{
-        /*const productExistente=isInCart(item.id);
-        if(productExistente){
-            const arrayAux=cart;
-            const itemDelet=arrayAux.find(product=>product===item);
-            const itemIndex=arrayAux.indexOf(itemDelet);
-            arrayAux.splice(itemIndex,1);
-            setCart(arrayAux);
-            console.log("item eliminado")
-        } else{
-            console.log("item no encontrado");
-        }*/
+
         const filteredProducts = cart.filter(product=> product.id !== item.id);
         setCart(filteredProducts);
     }

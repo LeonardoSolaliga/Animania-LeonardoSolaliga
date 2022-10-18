@@ -12,3 +12,11 @@ html {
 a{
     text-decoration: none;
 }
+body{
+    background-color: antiquewhite;
+    font-family: 'Muli',sans-serif;
+}
+button{
+    font-family: 'Muli',sans-serif;
+}
+
