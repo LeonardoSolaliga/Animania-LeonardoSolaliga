@@ -52,6 +52,7 @@ const Cart = () => {
   const {cart, removeItem, clearCart,total} = useContext(Shop);
   const [accept,setAccept]=useState(false);
   const [loading, setLoading] = useState(false);
+  const [ord,setOrd]=useState("")
   const navigate=useNavigate();
   const renderImage = (image) => {
     return(
@@ -72,8 +73,9 @@ const Cart = () => {
       
     })
     setLoading(false);
+    setOrd(docRef.id);
+    document.getElementById('modalOrden').style.display='flex';
     clearCart();
-    alert(`Gracias por la compra, se genero la orden :  ${docRef.id}`);
     
   }
 
@@ -148,6 +150,12 @@ const Cart = () => {
     cancelar.style.display='none';
     document.getElementById('myform').reset();
   }
+  const handleAceptar=(e)=>{
+
+    e.preventDefault();
+    let cancelar=document.getElementById('modalOrden');
+    cancelar.style.display='none';
+  }
   return (
     <>
     <div id='formulario' >
@@ -217,6 +225,7 @@ const Cart = () => {
             ) : (
                 <button onClick={botonComprar}>Confirmar compra</button>
             )):<button onClick={botonDatos}>Ingresar datos para finalizar</button>)}
+      <div id='modalOrden'><div className='cuadroModal'>gracias por la compra, su numero de orden es: {ord}<button onClick={handleAceptar}>Aceptar</button></div></div>
     </div>
     </>
   );

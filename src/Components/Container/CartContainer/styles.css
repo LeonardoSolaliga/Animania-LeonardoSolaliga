@@ -96,3 +96,27 @@ input[type="submit"]{
     background-color: antiquewhite;
     font-family: 'Muli',sans-serif;
 }
+#modalOrden{
+
+    position: fixed;
+    display: none;
+    z-index: 3;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.7);
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.cuadroModal{
+
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    padding: 40px;
+    background-color: antiquewhite;
+    font-family: 'Muli',sans-serif;
+
+}

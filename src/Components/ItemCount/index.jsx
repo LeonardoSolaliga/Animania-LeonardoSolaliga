@@ -8,16 +8,10 @@ const ItemCount=({stock, initial, onAdd})=> {
         if(count<stock){
             setCount(count+1);
         }
-        else{
-            alert("no hay mas stock");
-        }
     }
     const handleDecrement=()=>{
         if(count>initial){
             setCount(count-1);
-        }
-        else{
-            alert("No puede bajar mas");
         }
 
     }
