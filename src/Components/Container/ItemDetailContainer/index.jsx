@@ -9,6 +9,7 @@ import { db } from '../../../firebase/config';
 const ItemDetailContainer = () => {
 
     const[productDetail, setproductDetail]=useState({})
+    const [loading,setLoading]=useState(false)
     const {productId}=useParams()
     const navigate = useNavigate();
 
@@ -17,7 +18,7 @@ const ItemDetailContainer = () => {
         const getProductos=async()=>{
             
             try{
-                
+                setLoading(true);
 
                 
                 const docRef = doc(db, "products", productId);
@@ -33,14 +34,18 @@ const ItemDetailContainer = () => {
             } catch(error){
                 console.log("error");
             }
+            setLoading(false);
             
         }
         getProductos();
+        
 
     },[productId,navigate])
   
     return (
-    <ItemDetail product={productDetail}/>
+    <>
+    {loading  ? <h2>Loading</h2>:<ItemDetail product={productDetail}/>}
+    </>
   )
 }
 

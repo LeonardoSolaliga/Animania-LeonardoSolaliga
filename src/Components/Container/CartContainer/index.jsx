@@ -74,6 +74,7 @@ const Cart = () => {
     setLoading(false);
     clearCart();
     alert(`Gracias por la compra, se genero la orden :  ${docRef.id}`);
+    
   }
 
   const renderRemoveButton = (item) => {

@@ -8,7 +8,7 @@ const NavBar = () => {
     <div className="navbar">
       <div className="flexeo">
         <Link to="/" className="letra">
-          LogoAnimania
+          <img className="navbarimg" src="img/logo2.png" alt="logo" />
         </Link>
         <nav>
           <ul className="navlinks">

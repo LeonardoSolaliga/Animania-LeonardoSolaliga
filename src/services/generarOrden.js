@@ -3,9 +3,10 @@ const ordenGenerada=(nombre,email,numero,cart,total)=>{
     return{
         buyer:{
             nombre:nombre,
-            email:email
+            email:email,
+            numero:numero,
+
         },
-        numero:numero,
         items:cart
         
         ,
