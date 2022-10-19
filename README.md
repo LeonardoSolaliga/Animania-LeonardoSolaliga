@@ -2,7 +2,8 @@
 
 Proyecto e-commerce
 
-##Teconologias usadas
+## Teconologias usadas
+
 -**HTML**
 
 -**CSS**
@@ -11,7 +12,7 @@ Proyecto e-commerce
 
 -**ReactJs**
 
-##Teconologias usadas
+## Teconologias usadas
 
 -**React-router-dom** :Libreria de routing reactjs
 
